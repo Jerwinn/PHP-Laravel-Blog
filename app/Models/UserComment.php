@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserPost extends Model
+class UserComment extends Model
 {
     use HasFactory;
 
     public function userPost(){
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsToMany(UserPost::class, 'user_comment_user_post','user_comment_id', 'user_post_id');
     }
-
-    public function userComments(){
-        return $this->belongsToMany(UserComment::class);
-    }
-
 }

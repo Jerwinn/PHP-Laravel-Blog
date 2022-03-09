@@ -20,6 +20,7 @@ class UserPostTableSeeder extends Seeder
         $a->content = 'content';
         $a->user_id = 1;
         $a->save();
+
         UserPost::factory()->count(50)->create();
 
 
