@@ -15,9 +15,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $a = new User();
-        $a->username='Central Enclosure';
-        $a->save();
+
         User::factory()->count(50)->create();
     }
 }

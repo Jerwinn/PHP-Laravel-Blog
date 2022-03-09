@@ -11,6 +11,7 @@ class CommentsTableSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
+     * @throws \Exception
      */
     public function run()
     {
@@ -18,7 +19,7 @@ class CommentsTableSeeder extends Seeder
         $k -> comment = 'test';
         $k -> save();
         $k ->userPost()
-            ->attach(1);
+            ->attach(random_int(1, 50));
         $k -> userPost()->attach(1);
 
     }

@@ -14,7 +14,7 @@ class UserPost extends Model
     }
 
     public function userComments(){
-        return $this->belongsToMany(UserComment::class);
+        return $this->belongsToMany(UserComment::class,'user_comment_user_post','user_post_id','user_comment_id');
     }
 
 }
