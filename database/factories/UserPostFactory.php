@@ -3,9 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
-use App\Models\UserPost;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Psy\Util\Str;
 
 class UserPostFactory extends Factory
 {
@@ -14,13 +12,14 @@ class UserPostFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
+            'user_id' => User::all()->random(),
             'title' => $this->faker->sentence(),
             'content' => $this->faker->sentences(3, true),
-            'user_id' => User::all()->random(),
-
+            'date_posted'=>$this->faker->dateTimeThisYear(),
+            'image' => $this->faker->image(),
 
         ];
     }

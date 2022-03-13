@@ -11,12 +11,13 @@ class UserFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'username' => $this->faker->unique()->userName(),
             'password' => $this->faker->password(),
             'email' => $this->faker->unique()->email(),
+
         ];
     }
 }

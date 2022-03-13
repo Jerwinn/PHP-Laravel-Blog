@@ -15,8 +15,8 @@ class CreateUserCommentUserPostTable extends Migration
     {
         Schema::create('user_comment_user_post', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_post_id');
-            $table->unsignedBigInteger('user_comment_id');
+            $table->unsignedBigInteger('user_post_id')->unique();
+            $table->unsignedBigInteger('user_comment_id')->unique();
             $table->timestamps();
 
             $table->foreign('user_post_id')->references('id')->on('user_posts')
