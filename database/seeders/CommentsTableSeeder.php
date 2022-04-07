@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\UserComment;
+use App\Models\Comment;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\str;
 
@@ -16,11 +16,11 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        $k = new UserComment();
-        $k -> comment = str::random(10);
-        $k -> user_id = '1';
-        $k -> save();
-        $k ->postComments()->attach(random_int(1, 50));
-        $k -> postComments()->attach(random_int(1, 50));
+        $k = new Comment();
+        $k -> user_comments = str::random(10);
+       $k -> user_id = '1';
+       $k -> save();
+
+
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\UserPost;
+use App\Models\Post;
 use Illuminate\Database\Seeder;
 
 class UserPostTableSeeder extends Seeder
@@ -14,6 +14,6 @@ class UserPostTableSeeder extends Seeder
      */
     public function run()
     {
-        UserPost::factory()->count(50)->create();
+        //Post::factory()->count(50)->create();
     }
 }

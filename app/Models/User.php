@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     use HasFactory;
-    public function userPost(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(UserPost::class, 'user_post_id');
+    public function posts(){
+        return $this->hasMany(Post::class);
     }
-    public function userComment(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function comment()
     {
-        return $this->belongsTo(UserComment::class);
+        return $this->belongsTo(Comment::class);
     }
 }

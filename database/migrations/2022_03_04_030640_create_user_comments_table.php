@@ -13,9 +13,9 @@ class CreateUserCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_comments', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string("comment");
+            $table->string("user_comments");
             $table->unsignedBigInteger('user_id')->unique();
             $table->timestamps();
 
@@ -32,6 +32,6 @@ class CreateUserCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_comments');
+        Schema::dropIfExists('comments');
     }
 }
