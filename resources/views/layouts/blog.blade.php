@@ -61,7 +61,7 @@
                     <span>Written By Alphayo Wakarindi</span>
                 </p>
                 <h4>
-                    <a href="single-blog.html">Premier League 2021/2022 Fixtures</a>
+                    <a href="{{route('blog.show')}}">Premier League 2021/2022 Fixtures</a>
                 </h4>
             </div>
 
@@ -72,7 +72,7 @@
                     <span>Written By Alphayo Wakarindi</span>
                 </p>
                 <h4>
-                    <a href="single-blog.html">12 Health Benefits Of Pomegranate Fruit</a>
+                    <a href="{{route('blog.show')}}">12 Health Benefits Of Pomegranate Fruit</a>
                 </h4>
             </div>
 
@@ -83,7 +83,7 @@
                     <span>Written By Alphayo Wakarindi</span>
                 </p>
                 <h4>
-                    <a href="single-blog.html">Nairobi, The Only City In The World With A National Park</a>
+                    <a href="{{route('blog.show')}}">Nairobi, The Only City In The World With A National Park</a>
                 </h4>
             </div>
 

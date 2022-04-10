@@ -19,14 +19,14 @@ Route::get('/profile', function(){
 
 route::get('about', function(){
     return view('layouts.about');
-});
+})->name('about');
 
 //Controllers
 
-Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'welcome']);
+Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
 
-Route::get('/blog', [\App\Http\Controllers\BlogPageController::class, 'index']);
+Route::get('/blog', [\App\Http\Controllers\BlogPageController::class, 'index'])->name('blog.index');
 
-Route::get('/blog/post', [\App\Http\Controllers\BlogPageController::class, 'show']);
+Route::get('/blog/post', [\App\Http\Controllers\BlogPageController::class, 'show'])->name('blog.show');
 
-Route::get('/contactUs', [\App\Http\Controllers\ContactUsController::class, 'index']);
+Route::get('/contactUs', [\App\Http\Controllers\ContactUsController::class, 'index'])->name('contactUs.index');
