@@ -13,10 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/profile', function(){
     return view('profile');
 });
+
+route::get('about', function(){
+    return view('layouts.about');
+});
+
+//Controllers
+
+Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'welcome']);
+
+Route::get('/blog', [\App\Http\Controllers\BlogPageController::class, 'index']);
+
+Route::get('/blog/post', [\App\Http\Controllers\BlogPageController::class, 'show']);
+
+Route::get('/contactUs', [\App\Http\Controllers\ContactUsController::class, 'index']);
