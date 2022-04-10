@@ -28,10 +28,10 @@
 
         <div class="side-links">
             <ul>
-                <li><a class="active" href="/">Home</a></li>
-                <li><a href="{{route('blog.index')}}">Blog</a></li>
-                <li><a href="{{route('about')}}">About</a></li>
-                <li><a href="{{route('contactUs.index')}}">Contact</a></li>
+                <li><a class="{{Request::routeIs('welcome.index') ? 'active' : ''}}" href="{{route('welcome.index')}}">Home</a></li>
+                <li><a class="{{Request::routeIs('blog.index') ? 'active' : ''}}" href="{{route('blog.index')}}">Blog</a></li>
+                <li><a class="{{Request::routeIs('about') ? 'active' : ''}}" href="{{route('about')}}">About</a></li>
+                <li><a class="{{Request::routeIs('contactUs.index') ? 'active' : ''}}" href="{{route('contactUs.index')}}">Contact</a></li>
             </ul>
         </div>
 
