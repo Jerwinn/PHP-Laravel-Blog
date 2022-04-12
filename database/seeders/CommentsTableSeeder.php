@@ -16,10 +16,10 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        $k = new Comment();
-        $k -> user_comments = str::random(10);
-       $k -> user_id = '1';
-       $k -> save();
+        //$k = new Comment();
+        //$k -> user_comments = str::random(10);
+       //$k -> user_id = '1';
+       //$k -> save();
 
 
     }
