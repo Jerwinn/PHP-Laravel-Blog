@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Login;
+use App\Models\admin;
 
-class LoginController extends Controller
+class AdminController extends Controller
 {
     function login()
     {
@@ -17,7 +17,7 @@ class LoginController extends Controller
             'username' => 'required',
             'password' => 'password'
         ]);
-        $userCheck = Login::where(['username' => $request->username, 'password' => $request->password])
+        $userCheck = admin::where(['username' => $request->username, 'password' => $request->password])
             ->count();
         if($userCheck>0){
             return redirect('admin/dashboard');

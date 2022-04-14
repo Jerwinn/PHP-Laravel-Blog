@@ -30,8 +30,8 @@ Route::get('/profile', function() {
 });
 
 //login
-Route::get('/user/login',[\App\Http\Controllers\LoginController::class,'login']);
-Route::post('/user/login',[\App\Http\Controllers\LoginController::class,'loginSubmit']);
+Route::get('/admin/login',[\App\Http\Controllers\AdminController::class,'login']);
+Route::post('/admin/login',[\App\Http\Controllers\AdminController::class,'loginSubmit']);
 
 
 
