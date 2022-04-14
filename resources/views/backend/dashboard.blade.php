@@ -747,11 +747,8 @@
     <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
     <!-- Page level plugins -->
-    <script src="../../../../Downloads/startbootstrap-sb-admin-2-gh-pages-2/vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-   <script src="../../../../Downloads/startbootstrap-sb-admin-2-gh-pages-2/js/demo/chart-area-demo.js"></script>
-    <script src="../../../../Downloads/startbootstrap-sb-admin-2-gh-pages-2/js/demo/chart-pie-demo.js"></script>
+
 
 </body>
 
