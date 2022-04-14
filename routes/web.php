@@ -35,7 +35,8 @@ Route::get('/profile', function() {
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::post('/admin/login',[AdminController::class,'loginSubmit']);
 Route::get('/admin/dashboard',[AdminController::class,'adminDashboard']);
-Route::resource('category', PostCategoryController::class);
+Route::get('admin/categories/{id}/delete',[PostCategoryController::class, 'destroy']);
+Route::resource('admin/categories', PostCategoryController::class);
 
 //frontend
 
@@ -43,12 +44,12 @@ Route::get('about', function () {
     return view('layouts.about');
 })->name('about');
 
-Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
+//Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
 
-Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
+//Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
 
-Route::get('/blog', [\App\Http\Controllers\BlogPageController::class, 'index'])->name('blog.index');
+//Route::get('/blog', [\App\Http\Controllers\BlogPageController::class, 'index'])->name('blog.index');
 
-Route::get('/blog/post', [\App\Http\Controllers\BlogPageController::class, 'show'])->name('blog.show');
+//Route::get('/blog/post', [\App\Http\Controllers\BlogPageController::class, 'show'])->name('blog.show');
 
-Route::get('/contactUs', [\App\Http\Controllers\ContactUsController::class, 'index'])->name('contactUs.index');
+//Route::get('/contactUs', [\App\Http\Controllers\ContactUsController::class, 'index'])->name('contactUs.index');
