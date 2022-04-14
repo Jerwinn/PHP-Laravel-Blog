@@ -25,7 +25,7 @@
                 <img src={{asset('images/pic1.jpg')}} alt="" />
                 <p>
                     2 hours ago
-                    <span>Written By Alphayo Wakarindi</span>
+                    <span>Written By Jerwin</span>
                 </p>
                 <h4>
                     <a href="blog/post">Benefits of Getting Covid 19 Vaccination</a>

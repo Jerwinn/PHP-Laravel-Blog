@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Login;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,5 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(UserPostTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
+
+        $k = new Login();
+        $k -> id = 1;
+        $k -> username = 'admin';
+        $k -> password = 'password';
+        $k -> save();
     }
 }

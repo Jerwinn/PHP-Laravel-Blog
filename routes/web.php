@@ -13,15 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/profile', function(){
+//laravel breeze login
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+Route::get('/profile', function() {
     return view('profile');
 });
 
-route::get('about', function(){
+//login
+//route::get('/admin/login')
+
+//frontend
+
+route::get('about', function () {
     return view('layouts.about');
 })->name('about');
 
-//Controllers
+Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
 
 Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
 
