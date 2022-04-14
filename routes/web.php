@@ -30,11 +30,14 @@ Route::get('/profile', function() {
 });
 
 //login
-//route::get('/admin/login')
+Route::get('/user/login',[\App\Http\Controllers\LoginController::class,'login']);
+Route::post('/user/login',[\App\Http\Controllers\LoginController::class,'loginSubmit']);
+
+
 
 //frontend
 
-route::get('about', function () {
+Route::get('about', function () {
     return view('layouts.about');
 })->name('about');
 
