@@ -15,7 +15,9 @@ class PostCategoryController extends Controller
     public function index()
     {
         $data=PostCategory::all();
-        return view('backend.categories.index',['data'=> $data]);
+        return view('backend.categories.index',['data'=> $data,
+            'title'=>'Categories',
+            'meta_description' => 'This is the meta description for the categories']);
     }
 
     /**

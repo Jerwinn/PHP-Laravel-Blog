@@ -19,11 +19,11 @@ class CreateUserCommentUserPostTable extends Migration
             $table->unsignedBigInteger('comments_id')->unique();
             $table->timestamps();
 
-            $table->foreign('comments_id')->references('id')->on('comments')
-                ->onDelete('cascade')->onUpdate('cascade');
+            //$table->foreign('comments_id')->references('id')->on('comments')
+              //  ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->foreign('posts_id')->references('id')->on('posts')
-                ->onDelete('cascade')->onUpdate('cascade');
+            //$table->foreign('posts_id')->references('id')->on('posts')
+              //  ->onDelete('cascade')->onUpdate('cascade');
 
 
 

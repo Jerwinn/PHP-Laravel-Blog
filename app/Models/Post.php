@@ -9,14 +9,14 @@ class Post extends Model
 {
     use HasFactory;
 
-    public function post()
-    {
-        return $this->belongsTo(User::class);
-    }
+    //public function post()
+    //{
+    ////    return $this->belongsTo(User::class);
+    //}
 
-    public function comments()
-    {
-        return $this->belongsToMany(Comment::class);
-    }
+   // public function comments()
+   // {
+    //    return $this->belongsToMany(Comment::class);
+   // }
 
 }

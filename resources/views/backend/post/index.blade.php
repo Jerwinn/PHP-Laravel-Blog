@@ -1,6 +1,5 @@
 @extends('layout.layout')
-@section('title', $title)
-@section('meta_description',$meta_description)
+
 @section('content')
     <div class="container-fluid">
 
@@ -9,15 +8,15 @@
             <li class="breadcrumb-item">
                 <a href="index.html">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Category</li>
+            <li class="breadcrumb-item active">Post</li>
         </ol>
 
 
         <!-- DataTables Example -->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fas fa-table"></i> Categories
-                <a href="{{url('admin/categories/create')}}" class="float-right btn btn-sm btn-dark">Add Data</a>
+                <i class="fas fa-table"></i> Add a New Post
+                <a href="{{url('admin/post/create')}}" class="float-right btn btn-sm btn-dark">Add Post</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -26,8 +25,9 @@
                         <tr>
                             <th>#</th>
                             <th>Title</th>
-                            <th>Description</th>
+                            <<th>Description</th>
                             <th>Image</th>
+                            <th>Full</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -37,19 +37,21 @@
                             <th>Title</th>
                             <th>Description</th>
                             <th>Image</th>
+                            <th>Full</th>
                             <th>Action</th>
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach($data as $cat)
+                        @foreach($Data as $post)
                             <tr>
-                                <td>{{$cat->id}}</td>
-                                <td>{{$cat->title}}</td>
-                                <td>{{$cat->description}}</td>
-                                <td><img src="{{ asset('images').'/'.$cat->image }}" width="100" /></td>
+                                <td>{{$post->id}}</td>
+                                <td>{{$post->title}}</td>
+                                <td>{{$post->content}}</td>
+                                <td><img src="{{ asset('images/thumbnails').'/'.$post->thumbnail }}" width="100" /></td>
+                                <td><img src="{{ asset('images/fullImage').'/'.$post->image }}" width="100" /></td>
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="{{url('admin/categories/'.$cat->id.'/edit')}}">Update</a>
-                                    <a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" href="{{url('admin/categories/'.$cat->id.'/delete')}}">Delete</a>
+                                    <a class="btn btn-info btn-sm" href="{{url('admin/post/'.$post->id.'/edit')}}">Update</a>
+                                    <a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" href="{{url('admin/post/'.$post->id.'/delete')}}">Delete</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -58,5 +60,7 @@
                 </div>
             </div>
         </div>
+
+    </div>
 
 @endsection

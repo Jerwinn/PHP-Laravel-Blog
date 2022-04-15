@@ -3,7 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostCategoryController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,8 +35,24 @@ Route::get('/profile', function() {
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::post('/admin/login',[AdminController::class,'loginSubmit']);
 Route::get('/admin/dashboard',[AdminController::class,'adminDashboard']);
+
+/**
+ * Logout
+ */
+Route::get('/admin/logout',[AdminController::class,'logout']);
+
+/**
+ * Categories routes
+ */
 Route::get('admin/categories/{id}/delete',[PostCategoryController::class, 'destroy']);
 Route::resource('admin/categories', PostCategoryController::class);
+
+/**
+ * Posts
+ */
+Route::get('admin/post/{id}/delete',[PostController::class, 'destroy']);
+Route::resource('admin/post', PostController::class);
+
 
 //frontend
 

@@ -32,4 +32,9 @@ class AdminController extends Controller
     function adminDashboard(){
         return view('backend.dashboard');
     }
+
+    function logout(){
+        session()->forget(['adminData']);
+        return redirect('admin/login');
+    }
 }
