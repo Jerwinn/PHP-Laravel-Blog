@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SettingsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,9 @@ Route::get('/profile', function() {
     return view('profile');
 });
 
-//login
+/**
+ * Login
+ */
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::post('/admin/login',[AdminController::class,'loginSubmit']);
 Route::get('/admin/dashboard',[AdminController::class,'adminDashboard']);
@@ -53,7 +56,11 @@ Route::resource('admin/categories', PostCategoryController::class);
 Route::get('admin/post/{id}/delete',[PostController::class, 'destroy']);
 Route::resource('admin/post', PostController::class);
 
-
+/**
+ * Settings
+ */
+Route::get('admin/settings',[SettingsController::class, 'index']);
+Route::post('admin/settings',[SettingsController::class, 'saveSettings']);
 //frontend
 
 Route::get('about', function () {
