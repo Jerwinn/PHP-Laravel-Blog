@@ -67,7 +67,7 @@ Route::get('about', function () {
     return view('layouts.about');
 })->name('about');
 
-//Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
+Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
 
 //Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
 

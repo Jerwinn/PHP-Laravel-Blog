@@ -1,68 +1,92 @@
-@extends('layout')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@section('header')
-    <header class="header">
-        <div class="header-text">
-            <h1>Jerwin's Blog</h1>
-            <h4>Dashboard of verified news...</h4>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('bootstrap/bootstrap.min.css')}}" />
+    <!-- Bootstrap 4 Js -->
+    <script type="text/javascript" src="{{asset('bootstrap/bootstrap.min.js')}}"></script>
+    <!-- Jquery -->
+    <script type="text/javascript" src="{{asset('bootstrap/jquery-3.6.0.min.js')}}"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">CodeArtisanLab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Account</a>
+                </li>
+            </ul>
         </div>
-        <div class="overlay"></div>
-    </header>
-@endsection
-
-@section('main')
-    <main class="container">
-        <h2 class="header-title">Latest Blog Posts</h2>
-        <section class="cards-blog latest-blog">
-            <div class="card-blog-content">
-                <img src="{{asset('images/pic1.jpg')}}" alt="" />
-                <p>
-                    2 hours ago
-                    <span style="float: right">Written By Alphayo Wakarindi</span>
-                </p>
-                <h4 style="font-weight: bolder">
-                    <a href="single-blog.html"
-                    >Benefits of Paul's Photography capturing your Wedding</a
-                    >
-                </h4>
+    </div>
+</nav>
+    <!-- Get latest posts -->
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    @if(count($posts)>0)
+                        @foreach($posts as $post)
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <a href="{{url('details/'.$post->id)}}"><img src="{{asset('images/thumbnails/'.$post->thumbnail)}}" class="card-img-top" alt="{{$post->title}}" /></a>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="{{url('details/'.$post->id)}}">{{$post->title}}</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <p class="alert alert-danger">No Post Found</p>
+                    @endif
+                </div>
             </div>
-
-            <div class="card-blog-content" data-aos="fade-left">
-                <img src="{{asset('images/pic2.jpg')}}" alt="" />
-                <p>
-                    23 hours ago
-                    <span style="float: right">Written By Alphayo Wakarindi</span>
-                </p>
-                <h4 style="font-weight: bolder">
-                    <a href="single-blog.html"
-                    >Benefits of Using Drones in Aerial Photography</a
-                    >
-                </h4>
+            <!-- Right SIdebar -->
+            <div class="col-md-4">
+                <!-- Search -->
+                <div class="card mb-4">
+                    <h5 class="card-header">Search</h5>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" />
+                            <div class="input-group-append">
+                                <button class="btn btn-dark" type="button" id="button-addon2">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Posts -->
+                <div class="card mb-4">
+                    <h5 class="card-header">Recent Posts</h5>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item">Post 1</a>
+                        <a href="#" class="list-group-item">Post 2</a>
+                    </div>
+                </div>
+                <!-- Popular Posts -->
+                <div class="card mb-4">
+                    <h5 class="card-header">Popular Posts</h5>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item">Post 1</a>
+                        <a href="#" class="list-group-item">Post 2</a>
+                    </div>
+                </div>
             </div>
-
-            <div class="card-blog-content" data-aos="fade-up">
-                <img src="{{asset('images/pic3.jpg')}}" alt="" />
-                <p>
-                    2 days ago
-                    <span style="float: right">Written By Alphayo Wakarindi</span>
-                </p>
-                <h4 style="font-weight: bolder">
-                    <a href="single-blog.html"
-                    >Best Location Ideas for Your Next Photo Shoot</a
-                    >
-                </h4>
-            </div>
-
-            <div class="card-blog-content" data-aos="fade-left">
-                <img src="{{asset('images/pic4.jpg')}}" alt="" />
-                <p>
-                    3days ago
-                    <span style="float: right">Written By Alphayo Wakarindi</span>
-                </p>
-                <h4 style="font-weight: bolder">
-                    <a href="single-blog.html">8 Most Popular Photography Genres</a>
-                </h4>
-            </div>
-        </section>
+        </div>
     </main>
-@endsection
+</body>
+</html>
