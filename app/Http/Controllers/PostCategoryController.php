@@ -46,7 +46,7 @@ class PostCategoryController extends Controller
             $dest=public_path('/images');
             $image->move($dest,$reImage);
         }else{
-            $reImage='pic1.jpg';
+            $reImage='No Picture';
         }
 
         $category=new PostCategory;
