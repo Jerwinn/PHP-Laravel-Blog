@@ -8,7 +8,7 @@ use App\Models\Post;
 class WelcomePageController extends Controller
 {
     public function index(){
-        $posts=Post::all();
+        $posts=Post::orderBy('id','desc')->paginate(1);
         return view('welcome',['posts'=>$posts]);
     }
 }

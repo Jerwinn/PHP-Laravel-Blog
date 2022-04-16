@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +8,7 @@
     <script type="text/javascript" src="{{asset('bootstrap/bootstrap.min.js')}}"></script>
     <!-- Jquery -->
     <script type="text/javascript" src="{{asset('bootstrap/jquery-3.6.0.min.js')}}"></script>
-
+    <!-- Bootstrap 4 Js -->
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,18 +32,18 @@
         </div>
     </div>
 </nav>
-    <!-- Get latest posts -->
+<!-- Get latest posts -->
     <main class="container mt-4">
         <div class="row">
             <div class="col-md-8">
-                <div class="row">
+                <div class="col mb-4">
                     @if(count($posts)>0)
                         @foreach($posts as $post)
                             <div class="col-md-4">
                                 <div class="card">
-                                    <a href="{{url('details/'.$post->id)}}"><img src="{{asset('images/thumbnails/'.$post->thumbnail)}}" class="card-img-top" alt="{{$post->title}}" /></a>
+                                    <a href="{{url('detail/'.$post->id)}}"><img src="{{asset('images/thumbnails/'.$post->thumbnail)}}" class="card-img-top" alt="{{$post->title}}" /></a>
                                     <div class="card-body">
-                                        <h5 class="card-title"><a href="{{url('details/'.$post->id)}}">{{$post->title}}</a></h5>
+                                        <h5 class="card-title"><a href="{{url('detail/'.$post->id)}}">{{$post->title}}</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -54,6 +52,7 @@
                         <p class="alert alert-danger">No Post Found</p>
                     @endif
                 </div>
+                {{$posts->links()}}
             </div>
             <!-- Right SIdebar -->
             <div class="col-md-4">
