@@ -68,6 +68,7 @@ Route::get('about', function () {
 })->name('about');
 
 Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index']);
+Route::get('/detail/{slug}/{id}',[\App\Http\Controllers\WelcomePageController::class,'postDetail']);
 
 //Route::get('/', [\App\Http\Controllers\WelcomePageController::class, 'index'])->name('welcome.index');
 

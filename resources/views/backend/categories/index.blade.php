@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.backendLayout')
 @section('title', $title)
 @section('meta_description',$meta_description)
 @section('content')
