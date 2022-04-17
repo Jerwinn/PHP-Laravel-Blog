@@ -17,7 +17,7 @@ class WelcomePageController extends Controller
         return view('welcome',['posts'=>$posts]);
     }
 
-    function postDetail(Request $request, $slug, $postId){
+    function detail(Request $request, $slug, $postId){
         $detail = Post::find($postId);
         return view('postDetail',['detail'=>$detail]);
     }

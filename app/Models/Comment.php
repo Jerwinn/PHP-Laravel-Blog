@@ -9,14 +9,6 @@ class Comment extends Model
 {
     use HasFactory;
 
-    public function posts()
-    {
-        return $this->belongsToMany(Post::class);
-    }
 
-    public function user()
-    {
-        return $this->hasOne(User::class);
-    }
 
 }

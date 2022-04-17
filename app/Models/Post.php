@@ -9,6 +9,10 @@ class Post extends Model
 {
     use HasFactory;
 
+    function comments(){
+        return $this->hasMany('App\Models\Comment')->orderBy('id','desc');
+    }
+
     //public function post()
     //{
     ////    return $this->belongsTo(User::class);

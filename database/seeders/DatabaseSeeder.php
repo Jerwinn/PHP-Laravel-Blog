@@ -18,10 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserPostTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
 
-        $k = new admin();
-        $k -> id = 1;
-        $k -> username = 'admin';
-        $k -> password = 'password';
-        $k -> save();
+
     }
 }
