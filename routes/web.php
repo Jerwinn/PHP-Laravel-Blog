@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostCategoryController;
+use App\Http\Controllers\WelcomePageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SettingsController;
@@ -23,7 +24,7 @@ use App\Http\Controllers\SettingsController;
  * Login
  */
 
-Route::get('/',[\App\Http\Controllers\WelcomePageController::class,'index']);
+Route::get('/',[WelcomePageController::class,'index']);
 
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::post('/admin/login',[AdminController::class,'loginSubmit']);
@@ -57,10 +58,8 @@ Route::get('about', function () {
     return view('layouts.about');
 })->name('about');
 
-
-Route::get('/detail/{slug}/{id}',[\App\Http\Controllers\WelcomePageController::class,'detail']);
-
-
+Route::get('/detail/{slug}/{id}',[WelcomePageController::class,'detail']);
+Route::post('/comment/{slug}/{id}',[WelcomePageController::class,'comment']);
 
 //Route::get('/blog', [\App\Http\Controllers\BlogPageController::class, 'index'])->name('blog.index');
 
@@ -70,4 +69,3 @@ Route::get('/detail/{slug}/{id}',[\App\Http\Controllers\WelcomePageController::c
 
 Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\WelcomePageController::class, 'index'])->name('index');
-
