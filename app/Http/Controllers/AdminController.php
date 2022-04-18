@@ -15,7 +15,8 @@ class AdminController extends Controller
     function loginSubmit(Request $request){
         $request->validate([
             'username'=>'required',
-            'password'=>'required'
+            'password'=>'required',
+            'tags' => 'required'
         ]);
 
         $userCheck=Admin::where(['username'=>$request->username,'password'=>$request->password])->count();
@@ -24,7 +25,7 @@ class AdminController extends Controller
             session(['adminData'=>$adminData]);
             return redirect('admin/dashboard');
         }else{
-            return redirect('admin/login')->with('error','Invalid username/password!!');
+            return redirect('admin/login')->with('error','Invalid username or password');
         }
 
     }

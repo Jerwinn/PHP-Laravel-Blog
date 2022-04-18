@@ -21,7 +21,7 @@ class CreateUserPostsTable extends Migration
             $table->string('thumbnail');
             $table->string('image')->nullable();
             $table->longText('content');
-            $table->string('tags');
+            $table->string('tags')->nullable();
             $table->timestamps();
             //$table->foreign('user_id')->references('id')->on('users')
             // ->onDelete('cascade')->onUpdate('cascade');

@@ -34,7 +34,7 @@
     <body id="page-top">
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-        <a class="navbar-brand mr-1" href="index.html">Laravel Blog</a>
+        <a class="navbar-brand mr-1" href="index.html">The Life Blog</a>
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
         </button>
@@ -78,19 +78,7 @@
                     <a class="dropdown-item" href="{{url('admin/post/create')}}">Add New Post</a>
                 </div>
             </li>
-            <!-- Comments -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-comments"></i>
-                    <span>Comments</span>
-                </a>
-            </li>
-            <!-- Users -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Users</span>
-                </a>
+
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" href="login.html">View All</a>
                     <a class="dropdown-item" href="register.html">Add New</a>
@@ -116,18 +104,7 @@
         <div id="content-wrapper">
         @yield('content')
 
-        <!-- Sticky Footer -->
-            <footer class="sticky-footer">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright © Your Website 2018</span>
-                    </div>
-                </div>
-            </footer>
-
         </div>
-        <!-- /.content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 

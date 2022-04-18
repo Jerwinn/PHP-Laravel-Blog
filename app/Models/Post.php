@@ -13,6 +13,10 @@ class Post extends Model
         return $this->hasMany('App\Models\Comment')->orderBy('id','desc');
     }
 
+    function category(){
+        return $this->belongsTo(PostCategory::class, 'cat_id');
+    }
+
     //public function post()
     //{
     ////    return $this->belongsTo(User::class);

@@ -1,7 +1,7 @@
 @extends('layout.frontendLayout')
 @section('title','Home')
 @section('content')
-<!-- Get latest posts -->
+<!-- Get welcome page -->
     <div class="row">
         <div class="col-md-8">
             <div class="row mb-5">
@@ -21,12 +21,12 @@
                     <p class="alert alert-danger">No Post Found</p>
                 @endif
             </div>
-            <!-- Pagination -->
+            <!-- Pagination For Recent Posts -->
             {{$posts->links()}}
         </div>
-        <!-- Right SIdebar -->
+        <!-- Sidebar -->
         <div class="col-md-4">
-            <!-- Search -->
+            <!-- Search Menu -->
             <div class="card mb-4">
                 <h5 class="card-header">Search</h5>
                 <div class="card-body">
@@ -40,22 +40,15 @@
                     </form>
                 </div>
             </div>
+            <!-- Recent posts -->
             <div class="card mb-4">
                 <h5 class="card-header">Recent Posts</h5>
                 <div class="list-group list-group-flush">
                     @if($recentPost)
                         @foreach($recentPost as $post)
-                            <a href="#" class="list-group-item">{{$post->title}}</a>
+                            <a href="{{url('detail/'.Str::slug($post->title).'/'.$post->id)}}" class="list-group-item">{{$post->title}}</a>
                         @endforeach
                     @endif
-                </div>
-            </div>
-            <!-- Popular Posts -->
-            <div class="card mb-4">
-                <h5 class="card-header">Popular Posts</h5>
-                <div class="list-group list-group-flush">
-                    <a href="#" class="list-group-item">Post 1</a>
-                    <a href="#" class="list-group-item">Post 2</a>
                 </div>
             </div>
         </div>

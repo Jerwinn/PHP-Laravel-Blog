@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         Paginator::useBootstrap();
-        View::share('recentPost', Post::orderBy('id','desc')->limit('10')->get());
+        View::share('recentPost', Post::orderBy('id','desc')->limit('5')->get());
+        View::share('tendingPosts',Post::orderBy('views','desc')->limit('5')->get());
     }
 }
