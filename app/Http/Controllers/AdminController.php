@@ -16,7 +16,6 @@ class AdminController extends Controller
         $request->validate([
             'username'=>'required',
             'password'=>'required',
-            'tags' => 'required'
         ]);
 
         $userCheck=Admin::where(['username'=>$request->username,'password'=>$request->password])->count();

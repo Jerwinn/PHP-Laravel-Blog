@@ -7,7 +7,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.html">Dashboard</a>
+                <a href="{{url('/admin/dashboard')}}">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">Category</li>
         </ol>
