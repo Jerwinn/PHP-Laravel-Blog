@@ -6,6 +6,7 @@ use App\Models\PostCategory;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\Category;
 
 class WelcomePageController extends Controller
 {
@@ -15,7 +16,7 @@ class WelcomePageController extends Controller
                 $search = $request->search;
                 $posts = Post::where('title', 'like', '%' . $search . '%')->orderBy('id', 'desc')->paginate(1);
             } else {
-                $posts = Post::orderBy('id', 'desc')->paginate(1);
+                $posts = Post::orderBy('id', 'desc')->paginate(6);
             }
             return view('welcome', ['posts' => $posts]);
         }
@@ -44,4 +45,10 @@ class WelcomePageController extends Controller
             $categories=PostCategory::orderBy('id','desc')->paginate(5);
             return view('showCategories',['categories'=>$categories]);
         }
+
+    function postCategory(Request $request,$cat_slug,$cat_id){
+        $category=PostCategory::find($cat_id);
+        $posts=Post::where('cat_id',$cat_id)->orderBy('id','desc')->paginate(1);
+        return view('category',['posts'=>$posts,'category'=>$category]);
+    }
 }

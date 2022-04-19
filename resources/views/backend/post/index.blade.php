@@ -28,7 +28,7 @@
                             <<th>Description</th>
                             <th>Image</th>
                             <th>Full</th>
-                            <th>Action</th>
+                            <th>Category</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -38,7 +38,7 @@
                             <th>Description</th>
                             <th>Image</th>
                             <th>Full</th>
-                            <th>Action</th>
+                            <th>Category</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -46,6 +46,7 @@
                             <tr>
                                 <td>{{$post->id}}</td>
                                 <td>{{$post->title}}</td>
+                                <td>{{$post->category->title}}</td>
                                 <td>{{$post->content}}</td>
                                 <td><img src="{{ asset('images/thumbnails').'/'.$post->thumbnail }}" width="100" /></td>
                                 <td><img src="{{ asset('images/fullImage').'/'.$post->image }}" width="100" /></td>
