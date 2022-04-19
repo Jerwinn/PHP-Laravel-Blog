@@ -1,6 +1,7 @@
 @extends('layout.frontendLayout')
 @section('title','Home')
 @section('content')
+<!-- Get welcome page -->
     <div class="row">
         <div class="col-md-8">
             <div class="row mb-5">
@@ -20,9 +21,12 @@
                     <p class="alert alert-danger">No Post Found</p>
                 @endif
             </div>
+            <!-- Pagination For Recent Posts -->
             {{$posts->links()}}
         </div>
+        <!-- Sidebar -->
         <div class="col-md-4">
+            <!-- Search Menu -->
             <div class="card mb-4">
                 <h5 class="card-header">Search</h5>
                 <div class="card-body">
@@ -36,6 +40,7 @@
                     </form>
                 </div>
             </div>
+            <!-- Recent posts -->
             <div class="card mb-4">
                 <h5 class="card-header">Recent Posts</h5>
                 <div class="list-group list-group-flush">

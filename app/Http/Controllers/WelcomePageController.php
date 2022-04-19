@@ -20,29 +20,6 @@ class WelcomePageController extends Controller
             }
             return view('welcome', ['posts' => $posts]);
         }
-    function comment(Request $request, $slug, $id)
-    {
-        $request->validate([
-            'comment' => 'required'
-        ]);
-        $data = new Comment;
-        $data->user_id = $request->user()->id;
-        $data->post_id = $id;
-        $data->comment = $request->comment;
-        $data->save();
-        return redirect('/dashboard')->with('success', 'Comment for post has been submitted.');
-    }
-
-    function showCategories(){
-        $categories=PostCategory::orderBy('id','desc')->paginate(3);
-        return view('showCategories',['categories'=>$categories]);
-    }
-
-    function postCategory(Request $request,$cat_slug,$cat_id){
-        $category=PostCategory::find($cat_id);
-        $posts=Post::where('cat_id',$cat_id)->orderBy('id','desc')->paginate(3);
-        return view('category',['posts'=>$posts,'category'=>$category]);
-    }
 
         function detail(Request $request, $slug, $postId)
         {
@@ -51,5 +28,27 @@ class WelcomePageController extends Controller
             return view('postDetail', ['detail' => $detail]);
         }
 
+        function comment(Request $request, $slug, $id)
+        {
+            $request->validate([
+                'comment' => 'required'
+            ]);
+            $data = new Comment;
+            $data->user_id = $request->user()->id;
+            $data->post_id = $id;
+            $data->comment = $request->comment;
+            $data->save();
+            return redirect('/dashboard')->with('success', 'Comment for post has been submitted.');
+        }
 
+        function showCategories(){
+            $categories=PostCategory::orderBy('id','desc')->paginate(5);
+            return view('showCategories',['categories'=>$categories]);
+        }
+
+    function postCategory(Request $request,$cat_slug,$cat_id){
+        $category=PostCategory::find($cat_id);
+        $posts=Post::where('cat_id',$cat_id)->orderBy('id','desc')->paginate(1);
+        return view('category',['posts'=>$posts,'category'=>$category]);
+    }
 }
