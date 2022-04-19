@@ -2,16 +2,13 @@
 @section('content')
     <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
+                <a href="{{url('/admin/dashboard')}}">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">Settings</li>
         </ol>
 
-
-        <!-- DataTables Example -->
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fas fa-table"></i>
@@ -63,7 +60,5 @@
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- /.container-fluid -->
 @endsection

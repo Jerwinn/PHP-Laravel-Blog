@@ -62,6 +62,8 @@ Route::get('/detail/{slug}/{id}',[WelcomePageController::class,'detail']);
 Route::post('/comment/{slug}/{id}',[WelcomePageController::class,'comment']);
 Route::get('/categories',[WelcomePageController::class,'showCategories']);
 Route::get('/categories/{slug}/{id}',[WelcomePageController::class,'postCategory']);
+Route::get('user-post',[WelcomePageController::class,'saveUserPost']);
+Route::post('user-post',[WelcomePageController::class,'saveUserData']);
 //Route::get('/blog', [\App\Http\Controllers\BlogPageController::class, 'index'])->name('blog.index');
 
 //Route::get('/blog/post', [\App\Http\Controllers\BlogPageController::class, 'show'])->name('blog.show');

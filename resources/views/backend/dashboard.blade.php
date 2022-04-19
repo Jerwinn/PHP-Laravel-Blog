@@ -1,8 +1,6 @@
 @extends('layout.backendLayout')
 @section('content')
-
     <div class="container-fluid">
-    <!-- Breadcrumbs-->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{url('/admin/dashboard')}}">Dashboard</a>
@@ -11,7 +9,6 @@
     </ol>
 
     </div>
-    <!-- /.container-fluid -->
 @endsection
 
 

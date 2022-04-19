@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddViewsToPosts extends Migration
+class PostToStatusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,12 @@ class AddViewsToPosts extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('views')->default(0);
+            $table->integer('status')->default(0);
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations and drops the tables.
      *
      * @return void
      */

@@ -3,7 +3,6 @@
 @section('content')
     <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="{{url('/admin/dashboard')}}">Dashboard</a>
@@ -12,10 +11,9 @@
         </ol>
 
 
-        <!-- DataTables Example -->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fas fa-table"></i> Add a New Post
+                <i class="fas fa-table"></i> Show Posts
                 <a href="{{url('admin/post/create')}}" class="float-right btn btn-sm btn-dark">Add Post</a>
             </div>
             <div class="card-body">
@@ -46,7 +44,6 @@
                             <tr>
                                 <td>{{$post->id}}</td>
                                 <td>{{$post->title}}</td>
-                                <td>{{$post->category->title}}</td>
                                 <td>{{$post->content}}</td>
                                 <td><img src="{{ asset('images/thumbnails').'/'.$post->thumbnail }}" width="100" /></td>
                                 <td><img src="{{ asset('images/fullImage').'/'.$post->image }}" width="100" /></td>

@@ -1,7 +1,7 @@
 @extends('layout.frontendLayout')
 @section('title','Home')
 @section('content')
-<!-- Get welcome page -->
+<!-- Welcome page content -->
     <div class="row">
         <div class="col-md-8">
             <div class="row mb-5">
@@ -21,14 +21,14 @@
                     <p class="alert alert-danger">No Post Found</p>
                 @endif
             </div>
-            <!-- Pagination For Recent Posts -->
+            <!-- Pagination For Recent Post -->
             {{$posts->links()}}
         </div>
-        <!-- Sidebar -->
+        <!-- Menu -->
         <div class="col-md-4">
-            <!-- Search Menu -->
+            <!-- Search -->
             <div class="card mb-4">
-                <h5 class="card-header">Search</h5>
+                <h5 class="card-header">Search Posts</h5>
                 <div class="card-body">
                     <form action="{{url('/')}}">
                         <div class="input-group">
@@ -40,7 +40,7 @@
                     </form>
                 </div>
             </div>
-            <!-- Recent posts -->
+            <!-- Recent -->
             <div class="card mb-4">
                 <h5 class="card-header">Recent Posts</h5>
                 <div class="list-group list-group-flush">

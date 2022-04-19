@@ -2,7 +2,6 @@
 @section('content')
     <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="{{url('/admin/dashboard')}}">Dashboard</a>
@@ -10,11 +9,9 @@
             <li class="breadcrumb-item active">Category</li>
         </ol>
 
-
-        <!-- DataTables Example -->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fas fa-table"></i> Categories
+                <i class="fas fa-table"></i> Add a new category
                 <a href="{{url('admin/categories')}}" class="float-right btn btn-sm btn-dark">All Data</a>
             </div>
             <div class="card-body">
@@ -57,5 +54,5 @@
         </div>
 
     </div>
-    <!-- /.container-fluid -->
+
 @endsection

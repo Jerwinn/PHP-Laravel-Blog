@@ -66,7 +66,7 @@ class PostController extends Controller
         }
 
         $post=new Post;
-        $post->user_id=26;
+        $post->user_id=1;
         $post->cat_id=$request->category;
         $post->title=$request->post_title;
         $post->thumbnail=$reThumbnailImage;
@@ -125,7 +125,7 @@ class PostController extends Controller
             $dest=public_path('/images/thumbnails');
             $image1->move($dest,$reThumbnailImage);
         }else{
-            $reThumbnailImage = $request->post_thumbnail;
+            $reThumbnailImage = $request->post_image;
         }
 
         // Post Full Image

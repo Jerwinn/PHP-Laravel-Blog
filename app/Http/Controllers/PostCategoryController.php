@@ -57,7 +57,7 @@ class PostCategoryController extends Controller
         $category->image=$reImage;
         $category->save();
 
-        return redirect('admin/categories/create')->with('success','Post has been added.');
+        return redirect('admin/categories/create')->with('success','Category has been added.');
     }
     /**
      * Display the specified resource.

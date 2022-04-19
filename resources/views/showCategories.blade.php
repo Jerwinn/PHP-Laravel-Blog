@@ -21,6 +21,35 @@
         </div>
         <!-- Pagination -->
         {{$categories->links()}}
-
+    </div>
+    <!-- Sidebar -->
+    <div class="col-md-4">
+        <!-- Search Menu -->
+        <div class="card mb-4">
+            <h5 class="card-header">Search Posts</h5>
+            <div class="card-body">
+                <form action="{{url('/')}}">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" />
+                        <div class="input-group-append">
+                            <button class="btn btn-dark" type="button" id="button-addon2">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Recent posts -->
+        <div class="card mb-4">
+            <h5 class="card-header">Recent Posts</h5>
+            <div class="list-group list-group-flush">
+                @if($recentPost)
+                    @foreach($recentPost as $post)
+                        <a href="{{url('detail/'.Str::slug($post->title).'/'.$post->id)}}" class="list-group-item">{{$post->title}}</a>
+                    @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
 </div>
-@endsection('content')
+</main>
+@endsection

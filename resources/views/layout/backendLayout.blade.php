@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -79,11 +77,7 @@
                 </div>
             </li>
 
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="login.html">View All</a>
-                    <a class="dropdown-item" href="register.html">Add New</a>
-                </div>
-            </li>
+
             <!-- Settings -->
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/settings')}}">

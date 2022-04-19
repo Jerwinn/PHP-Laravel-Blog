@@ -1,7 +1,7 @@
 @extends('layout.frontendLayout')
 @section('title',$detail->title)
 @section('content')
-    <!-- Display post -->
+    <!-- Display post content -->
     <div class="row">
         <div class="col-md-8">
             @if(Session::has('success'))
@@ -20,7 +20,7 @@
                 </div>
             </div>
             @auth
-                <!-- Add User Comment -->
+                <!-- Add Comments -->
                     <div class="card my-5">
                         <h5 class="card-header">Add Comment</h5>
                         <div class="card-body">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     @endauth
-                <!-- Fetch Existing Comments -->
+                <!-- Get Existing Comments -->
                 <div class="card my-4">
                     <h5 class="card-header">Comments <span class="badge badge-dark">{{count($detail->comments)}}</span></h5>
                     <div class="card-body">

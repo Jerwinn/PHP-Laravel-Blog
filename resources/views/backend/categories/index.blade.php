@@ -4,7 +4,6 @@
 @section('content')
     <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="{{url('/admin/dashboard')}}">Dashboard</a>
@@ -12,11 +11,9 @@
             <li class="breadcrumb-item active">Category</li>
         </ol>
 
-
-        <!-- DataTables Example -->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fas fa-table"></i> Categories
+                <i class="fas fa-table"></i> Show Categories
                 <a href="{{url('admin/categories/create')}}" class="float-right btn btn-sm btn-dark">Add Data</a>
             </div>
             <div class="card-body">

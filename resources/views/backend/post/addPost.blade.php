@@ -1,8 +1,6 @@
 @extends('layout.backendLayout')
 @section('content')
     <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="{{url('/admin/dashboard')}}">Dashboard</a>
@@ -10,8 +8,6 @@
             <li class="breadcrumb-item active">Overview</li>
         </ol>
 
-
-        <!-- DataTables Example -->
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fas fa-table"></i> Add a Post
