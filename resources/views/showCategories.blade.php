@@ -19,7 +19,6 @@
             <p class="alert alert-danger">No Category Found</p>
             @endif
         </div>
-        <!-- Pagination -->
         {{$categories->links()}}
 
 </div>
