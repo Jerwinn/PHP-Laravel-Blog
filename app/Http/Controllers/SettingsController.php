@@ -6,15 +6,26 @@ use App\Models\PostCategory;
 use Illuminate\Http\Request;
 use App\Models\Setting;
 
-
+/**
+ * This class is used by admins to change post settings.
+ */
 class SettingsController extends Controller
 {
+    /**
+     * show the view for the admin settings.
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     function index()
     {
         $setting = Setting::first();
         return view('backend.settings.index',['setting' => $setting]);
     }
 
+    /**
+     * This saves the details of the setting onto the database.
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     function saveSettings(Request $request)
     {
         $countSetting=Setting::count();

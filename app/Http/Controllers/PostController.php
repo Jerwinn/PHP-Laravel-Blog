@@ -9,7 +9,7 @@ use App\Models\Post;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a the index page of the backend for admins.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
@@ -21,7 +21,7 @@ class PostController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new post.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
@@ -32,10 +32,10 @@ class PostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created post in the database. these include the post title, category, details and the image.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
@@ -45,7 +45,7 @@ class PostController extends Controller
             'post_content'=>'required',
         ]);
 
-        // Post Thumbnail
+
         if($request->hasFile('post_thumbnail')){
             $image1=$request->file('post_thumbnail');
             $reThumbnailImage=time().'.'.$image1->getClientOriginalExtension();
@@ -55,7 +55,6 @@ class PostController extends Controller
             $reThumbnailImage='NA';
         }
 
-        // Post Full Image
         if($request->hasFile('post_image')){
             $image2=$request->file('post_image');
             $reFullImage=time().'.'.$image2->getClientOriginalExtension();
@@ -87,14 +86,14 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the view for editing existing posts.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -104,7 +103,7 @@ class PostController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified post from the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -118,7 +117,6 @@ class PostController extends Controller
             'post_content'=>'required',
         ]);
 
-        // Post Thumbnail
         if($request->hasFile('post_thumbnail')){
             $image1=$request->file('post_thumbnail');
             $reThumbnailImage=time().'.'.$image1->getClientOriginalExtension();
@@ -128,7 +126,6 @@ class PostController extends Controller
             $reThumbnailImage = $request->post_image;
         }
 
-        // Post Full Image
         if($request->hasFile('post_image')){
             $image2=$request->file('post_image');
             $reFullImage=time().'.'.$image2->getClientOriginalExtension();
@@ -151,7 +148,7 @@ class PostController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified post from the database.
      *
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector

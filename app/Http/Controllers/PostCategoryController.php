@@ -31,7 +31,7 @@ class PostCategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource into the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
@@ -84,7 +84,7 @@ class PostCategoryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in the database
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -115,7 +115,7 @@ class PostCategoryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from the database.
      *
      * @param  int  $id
      *
