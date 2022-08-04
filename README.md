@@ -1,6 +1,6 @@
 # Blog - Web Application Project
 
-## This blog is made through laravel with the features of:
+## This blog is made with PHP through laravel with the features of:
 A login and registration for users.
 Admin Panel for the admin settings.
 Have blogs posted and stored within a database.
